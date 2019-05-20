@@ -1,0 +1,101 @@
+<div class="animated fadeIn">
+        <div class="row">
+                <div class="col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      Perditeso Pacientin: <strong>{{::pacienti.emri}} {{::pacienti.mbiemri}} | Nr. Personal: {{::pacienti.numriPersonal}}</strong>
+                    </div>
+                    <div class="card-body">
+                      <form action="" method="post" name="regjistroPacientinForm" class="form-horizontal">
+                        <div class="form-group row">
+                          <!--<label class="col-md-3 col-form-label">Static</label>-->
+                          <!--<div class="col-md-9">-->
+                            <!--<p class="form-control-static">Username</p>-->
+                          <!--</div>-->
+                            <div class="alert alert-danger" role="alert" ng-if="errorMessage">
+                                {{errorMessage}}
+                            </div>
+                        </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="numri-personal">Numri Personal:</label>
+                              <div class="col-md-9">
+                                  <input type="text" id="numri-personal" name="numriPersonal" class="form-control" placeholder="Numri personal i pacientit"
+                                         ng-model="pacienti.numriPersonal" required>
+                              </div>
+                          </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="emri">Emri:</label>
+                            <div class="col-md-9">
+                                <input type="text" id="emri" name="emri" class="form-control" placeholder="Emri i pacientit"
+                                       ng-model="pacienti.emri" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                                <label class="col-md-3 col-form-label" for="mbiemri">Mbiemri:</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="mbiemri" name="mbiemri" class="form-control" placeholder="Mbiemri i pacientit"
+                                           ng-model="pacienti.mbiemri" required>
+                                </div>
+                            </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label">Gjinia:</label>
+                              <div class="col-md-9 col-form-label">
+                                  <div class="form-check form-check-inline mr-1">
+                                      <input class="form-check-input" type="radio" id="gjinia-mashkull" value="M" name="gjinia" ng-model="pacienti.gjinia">
+                                      <label class="form-check-label" for="gjinia-mashkull">Mashkull</label>
+                                  </div>
+                                  <div class="form-check form-check-inline mr-1">
+                                      <input class="form-check-input" type="radio" id="gjinia-femer" value="F" name="gjinia" ng-model="pacienti.gjinia">
+                                      <label class="form-check-label" for="gjinia-femer">Femër</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="ditelindja">Dit&euml;lindja:</label>
+                              <div class="col-md-9">
+                                  <input type="date" id="ditelindja" name="diteLindja" class="form-control" placeholder="Dit&euml;lindja e pacientit"
+                                         ng-model="pacienti.diteLindja" required>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="numri-telefonit">Numri Telefonit:</label>
+                              <div class="col-md-9">
+                                  <input type="text" id="numri-telefonit" name="numriTelefonit" class="form-control" placeholder="Numri i telefonit t&euml; Pacientit"
+                                         ng-model="pacienti.numriTelefonit" required>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="email">Email:</label>
+                              <div class="col-md-9">
+                                  <input type="text" id="email" name="email" class="form-control" placeholder="Email i pacientit"
+                                         ng-model="pacienti.email" required>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="adresa">Adresa Vendbanimit:</label>
+                              <div class="col-md-9">
+                                  <input type="text" id="adresa" name="adresa" class="form-control" placeholder="Adresa e vendbanimit te Pacientit"
+                                         ng-model="pacienti.adresa" required>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="shenime-tjera">Shenime Tjera:</label>
+                              <div class="col-md-9">
+                                  <textarea rows="5" id="shenime-tjera" name="shenimeTjera" class="form-control"
+                                            placeholder="Sh&euml;nime t&euml; tjera rreth Pacientit"
+                                            ng-model="pacienti.shenimeTjera" required></textarea>
+                              </div>
+                          </div>
+                      </form>
+                    </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-sm btn-primary" id="regjistroButton" ng-click="submitPacientiForm()"><i class="fa fa-dot-circle-o"></i> Regjistro</button>
+                      <button type="reset" class="btn btn-sm btn-danger" ng-click="resetForm()"><i class="fa fa-ban"></i> Pastro</button>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <!--/.col-->
+              </div>
+</div>

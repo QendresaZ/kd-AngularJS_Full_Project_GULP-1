@@ -1,0 +1,62 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Lista e Pacientëve
+                </div>
+                <div class="card-body">
+                    <label for="statusi-pacienteve">Status i Pacient&euml;ve: </label>
+                    <select class="mb-1" ng-model="statusiPacientit" id="statusi-pacienteve" name="statusiPacientit">
+                        <option value="true">Aktiv</option>
+                        <option value="false">Jo aktiv</option>
+                    </select>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nr. Personal</th>
+                            <th>Emri</th>
+                            <th>Mbiemri</th>
+                            <th>Gjinia</th>
+                            <th>Numri Telefonit</th>
+                            <th>Dite Lindja</th>
+                            <th>Adresa</th>
+                            <td>Veprimet</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="pacienti in pacientet">
+                            <td>{{pacienti.id}}</td>
+                            <td>{{pacienti.numriPersonal}}</td>
+                            <td>{{pacienti.emri}}</td>
+                            <td>{{pacienti.mbiemri}}</td>
+                            <td>{{pacienti.gjinia}}</td>
+                            <td>{{pacienti.numriTelefonit}}</td>
+                            <td>{{pacienti.diteLindja | date: "dd.MM.yyyy"}}</td>
+                            <td>{{pacienti.adresa}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="shikoPacientin(pacienti.id)"><i class="fa fa-exclamation"></i>&nbsp; Shiko</button>
+                                <button type="button" class="btn btn-success btn-sm" ng-click="perditesoPacientin(pacienti.id)"><i class="fa fa-pencil"></i>&nbsp; Perditeso</button>
+                                <button type="button" class="btn btn-danger btn-sm" ng-click="deletePacientin(pacienti.id)"><i class="fa fa-close"></i>&nbsp; Fshij</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--/.col-->
+    </div>
+</div>
