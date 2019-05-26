@@ -1,0 +1,48 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Lista e Sherbimeve
+                </div>
+                <div class="card-body">
+                    
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Emri</th>
+                            <th>Cmimi</th>
+                            <th>Veprimet</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="sherbimi in sherbimet">
+                            <td>{{sherbimi.id}}</td>
+                            <td>{{sherbimi.emri}}</td>
+                            <td>{{sherbimi.cmimi}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" ng-click="shikoSherbimin(sherbimi.id)"><i class="fa fa-exclamation"></i>&nbsp; Shiko</button>
+                                <button type="button" class="btn btn-success btn-sm" ng-click="perditesoSherbimin(sherbimi.id)"><i class="fa fa-pencil"></i>&nbsp; Perditeso</button>
+                                <button type="button" class="btn btn-danger btn-sm" ng-click="deleteSherbimin(sherbimi.id)"><i class="fa fa-close"></i>&nbsp; Fshij</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--/.col-->
+    </div>
+</div>

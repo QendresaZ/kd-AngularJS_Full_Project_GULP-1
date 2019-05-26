@@ -97,6 +97,47 @@ angular
                     label: 'Shiko Terminet'
                 }
             })
+             //Sherbimet Pages
+             .state('app.sherbimet', {
+                url: "/sherbimet",
+                abstract: true,
+                template: '<ui-view></ui-view>',
+                ncyBreadcrumb: {
+                    label: 'Sherbimet'
+                }
+            })
+            .state('app.sherbimet.shto', {
+                url: '/shtoSherbimin',
+                templateUrl: 'views/sherbimet/shto.html',
+                controller: 'regjistroSherbiminController',
+                ncyBreadcrumb: {
+                    label: 'Shto Sherbimin'
+                }
+            })
+            .state('app.sherbimet.listo', {
+                url: '/listoSherbimet',
+                templateUrl: 'views/sherbimet/listo.html',
+                controller: 'listoSherbiminController',
+                ncyBreadcrumb: {
+                    label: 'Listo Sherbimet'
+                }
+            })
+            .state('app.sherbimet.perditeso', {
+                url: '/perditesoSherbimin/:sherbimiId',
+                templateUrl: 'views/sherbimet/perditeso.html',
+                controller: 'perditesoSherbiminController',
+                ncyBreadcrumb: {
+                    label: 'Perditeso Sherbimin'
+                }
+            })
+            .state('app.sherbimet.shiko', {
+                url: '/shikoSherbimin/:sherbimiId',
+                templateUrl: 'views/sherbimet/shiko.html',
+                controller: 'shikoSherbiminController',
+                ncyBreadcrumb: {
+                    label: 'Shiko Sherbimin'
+                }
+            })
             .state('app.components.buttons', {
                 url: '/buttons',
                 templateUrl: 'views/components/buttons.html',

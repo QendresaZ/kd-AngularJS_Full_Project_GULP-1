@@ -1,0 +1,63 @@
+<div class="animated fadeIn">
+        <div class="row">
+                <div class="col-md-6">
+                  <div class="card card-accent-info">
+                    <div class="card-header">
+                      <strong>Sherbimi: {{sherbimi.emri}} {{sherbimi.cmimi}}</strong>
+                    </div>
+                    <div class="card-body">
+                      <form action="" method="post" name="regjistroSherbiminForm" class="form-horizontal">
+                        <div class="form-group row">
+                          <!--<label class="col-md-3 col-form-label">Static</label>-->
+                          <!--<div class="col-md-9">-->
+                            <!--<p class="form-control-static">Username</p>-->
+                          <!--</div>-->
+                            <div class="alert alert-danger" role="alert" ng-if="errorMessage">
+                                {{errorMessage}}
+                            </div>
+                        </div>
+                          
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="emri">Emri:</label>
+                            <div class="col-md-9">
+                                <input type="text" id="emri" name="emri" disabled class="form-control" placeholder="Emri i sherbimit"
+                                       ng-model="sherbimi.emri" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="cmimi">Cmimi:</label>
+                            <div class="col-md-9">
+                                <input type="text" id="cmimi" disabled name="cmimi" class="form-control" placeholder="Cmimi i sherbimit"
+                                       ng-model="sherbimi.cmimi" required>
+                            </div>
+                        </div>
+                        
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="shenime-tjera">Shenime Tjera:</label>
+                              <div class="col-md-9">
+                                  <textarea rows="5" id="shenime-tjera" disabled name="shenime" class="form-control"
+                                            placeholder="Sh&euml;nime t&euml; tjera rreth Sherbimit"
+                                            ng-model="sherbimi.shenime" required></textarea>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="data-regjistrimit">Data Regjistrimit:</label>
+                              <div class="col-md-9">
+                                  <input type="text" id="data-regjistrimit" disabled name="dataRegjistrimit" class="form-control" placeholder="Data e regjistrimit te Sherbimit"
+                                         value="{{sherbimi.dataRegjistrimit | date: 'dd.MM.yyyy'}}" required>
+                              </div>
+                          </div>
+                      </form>
+                    </div>
+                    <div class="card-footer">
+                      <!--<button type="submit" class="btn btn-sm btn-primary" id="regjistroButton" ng-click="submitSherbimiForm()"><i class="fa fa-dot-circle-o"></i> Regjistro</button>-->
+                      <!--<button type="reset" class="btn btn-sm btn-danger" ng-click="resetForm()"><i class="fa fa-ban"></i> Pastro</button>-->
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <!--/.col-->
+              </div>
+</div>
