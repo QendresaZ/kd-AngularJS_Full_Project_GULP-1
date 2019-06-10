@@ -86,6 +86,22 @@
 
     </ul>
       </li>
+      <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.sherbimet')}">
+        <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.sherbimet')}" href="#"><i class="icon-book-open
+          "></i> Sherbimet</a>
+
+          <ul class="nav-dropdown-items">
+            <li class="nav-item">
+              <a class="nav-link" ui-sref-active="active" ui-sref="app.sherbimet.shto"><i class="icon-puzzle"></i> Shto Sherbimin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" ui-sref-active="active" ui-sref="app.sherbimet.listo"><i class="icon-puzzle"></i> Lista e Sherbimeve</a>
+            </li>
+
+        
+
+        </ul>
+      </li>
       <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.terminet')}">
         <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.terminet')}" href="#"><i class="icon-star"></i> Terminet</a>
         <ul class="nav-dropdown-items">

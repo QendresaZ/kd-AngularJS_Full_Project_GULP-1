@@ -1,6 +1,7 @@
 // controller.js
 angular.module('app')
     .constant('PacientetAPIPacientiServiceURL', 'http://localhost:5555/pacienti-service/v1/pacientet')
+    .constant('SherbimetAPISherbimiServiceURL', 'http://localhost:5555/sherbimet-service/v1/sherbimet')
 .controller('regjistroPacientinController', function ($scope, $http, $location, PacientetAPIPacientiServiceURL) {
 
     $scope.submitPacientiForm = function () {
@@ -23,6 +24,26 @@ angular.module('app')
 
     $scope.resetForm = function () {
         $scope.pacienti = null;
+    }
+})
+.controller('regjistroSherbiminController', function ($scope, $http, $location, SherbimetAPISherbimiServiceURL) {
+
+    $scope.submitSherbimiForm = function () {
+        console.log("Sherbimi JSON: " + JSON.stringify($scope.sherbimi));
+        $http({
+            method: 'POST',
+            url: SherbimetAPISherbimiServiceURL,
+            data: $scope.sherbimi,
+        }).then(function (response) {
+            $location.path("sherbimet/listoSherbimet");
+            console.log('Sherbimi u regjistrua')
+        }, function (errResponse) {
+            console.log('Gabim gjate regjistrimit: ' + errResponse);
+        });
+    }
+
+    $scope.resetForm = function () {
+        $scope.sherbimi = null;
     }
 })
 .controller('listoPacientetController', function ($scope, $http, $state , $location, PacientetAPIPacientiServiceURL) {
@@ -73,6 +94,36 @@ angular.module('app')
         })
     }
 })
+.controller('listoSherbiminController', function ($scope, $http, $state , $location, SherbimetAPISherbimiServiceURL) {
+    
+    // kthe listen e sherbimeve nga REST API
+    $http({
+        method: 'GET',
+        url : SherbimetAPISherbimiServiceURL
+    }).then(function (response) {
+        $scope.sherbimet = response.data;
+    });
+
+    $scope.perditesoSherbimin = function (sherbimiId) {
+        // redirekto ne path
+        $location.path("sherbimet/perditesoSherbimin/" + sherbimiId);
+    };
+
+    $scope.shikoSherbimin = function (sherbimiId) {
+        $location.path("sherbimet/shikoSherbimin/" + sherbimiId);
+    };
+
+   
+    $scope.deleteSherbimin = function (sherbimiId) {
+        $http({
+            method: 'DELETE',
+            url : SherbimetAPISherbimiServiceURL + '/' + sherbimiId
+        }).then(function (response) {
+            $location.path("sherbimet/listoSherbimet");
+            $state.reload();
+        })
+    }
+})
 .controller('perditesoPacientinController', function ($scope, $http, $location, PacientetAPIPacientiServiceURL, $stateParams) {
 
     $scope.pacientiId = $stateParams.pacientiId;
@@ -104,6 +155,37 @@ angular.module('app')
         $scope.pacienti = null;
     }
 })
+.controller('perditesoSherbiminController', function ($scope, $http, $location, SherbimetAPISherbimiServiceURL, $stateParams) {
+
+    $scope.sherbimiId = $stateParams.sherbimiId;
+
+    // populate form's input with pacienti's data
+    $http({
+        method: 'GET',
+        url : SherbimetAPISherbimiServiceURL + '/' + $scope.sherbimiId
+    }).then(function (response) {
+        $scope.sherbimi = response.data;
+        console.log('GOT');
+    });
+
+    $scope.submitSherbimiForm = function () {
+        console.log("Sherbimi JSON: " + JSON.stringify($scope.sherbimi));
+        $http({
+            method: 'POST',
+            url: SherbimetAPISherbimiServiceURL,
+            data: $scope.sherbimi,
+        }).then(function (response) {
+            $location.path("sherbimet/listoSherbimet");
+            console.log('Sherbimi u perditesua')
+        }, function (errResponse) {
+            console.log('Gabim gjate perditesimit: ' + errResponse);
+        });
+    }
+
+    $scope.resetForm = function () {
+        $scope.sherbimi = null;
+    }
+})
     .controller('shikoPacientinController', function ($scope, $http, $location, PacientetAPIPacientiServiceURL, $stateParams) {
 
         $scope.pacientiId = $stateParams.pacientiId;
@@ -133,5 +215,36 @@ angular.module('app')
 
         $scope.resetForm = function () {
             $scope.pacienti = null;
+        }
+    })
+    .controller('shikoSherbiminController', function ($scope, $http, $location, SherbimetAPISherbimiServiceURL, $stateParams) {
+
+        $scope.sherbimiId = $stateParams.sherbimiId;
+
+        // populate form's input with service's data
+        $http({
+            method: 'GET',
+            url : SherbimetAPISherbimiServiceURL + '/' + $scope.sherbimiId
+        }).then(function (response) {
+            $scope.sherbimi = response.data;
+            console.log('GOT');
+        });
+
+        $scope.submitSherbimiForm = function () {
+            console.log("Sherbimi JSON: " + JSON.stringify($scope.sherbimi));
+            $http({
+                method: 'POST',
+                url: SherbimetAPIPacientiServiceURL,
+                data: $scope.sherbimi,
+            }).then(function (response) {
+                $location.path("sherbimet/listoSherbimet");
+                console.log('Sherbimi u perditesua')
+            }, function (errResponse) {
+                console.log('Gabim gjate perditesimit: ' + errResponse);
+            });
+        }
+
+        $scope.resetForm = function () {
+            $scope.sherbimi = null;
         }
     })
