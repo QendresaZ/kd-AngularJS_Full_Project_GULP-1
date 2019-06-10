@@ -6,6 +6,9 @@
                     <i class="fa fa-align-justify"></i> Lista e Pacientëve
                 </div>
                 <div class="card-body">
+                    <div ng-show="{{sucessMessage}}">
+                        {{successMessage}}
+                    </div>
                     <label for="statusi-pacienteve">Status i Pacient&euml;ve: </label>
                     <select class="mb-1" ng-model="statusiPacientit" id="statusi-pacienteve" name="statusiPacientit">
                         <option value="true">Aktiv</option>
@@ -36,9 +39,9 @@
                             <td>{{pacienti.diteLindja | date: "dd.MM.yyyy"}}</td>
                             <td>{{pacienti.adresa}}</td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-sm" ng-click="shikoPacientin(pacienti.id)"><i class="fa fa-exclamation"></i>&nbsp; Shiko</button>
-                                <button type="button" class="btn btn-success btn-sm" ng-click="perditesoPacientin(pacienti.id)"><i class="fa fa-pencil"></i>&nbsp; Perditeso</button>
-                                <button type="button" class="btn btn-danger btn-sm" ng-click="deletePacientin(pacienti.id)"><i class="fa fa-close"></i>&nbsp; Fshij</button>
+                                <button type="button" class="btn btn-primary btn-sm" shikoPersonalNumber="{{pacienti.numriPersonal}}" ng-click="shikoPacientin(pacienti.id)"><i class="fa fa-exclamation"></i>&nbsp; Shiko</button>
+                                <button type="button" class="btn btn-success btn-sm" perditesoPersonalNumber="{{pacienti.numriPersonal}}" ng-click="perditesoPacientin(pacienti.id)"><i class="fa fa-pencil"></i>&nbsp; Perditeso</button>
+                                <button type="button" class="btn btn-danger btn-sm" deletePersonalNumber="{{pacienti.numriPersonal}}" ng-click="deletePacientin(pacienti.id)"><i class="fa fa-close"></i>&nbsp; Fshij</button>
                             </td>
                         </tr>
                         </tbody>

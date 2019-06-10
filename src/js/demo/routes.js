@@ -39,6 +39,17 @@ angular
                     label: 'Components'
                 }
             })
+                // Login and Auth
+            .state('app.auth', {
+                url : "/auth",
+                abstract: true,
+                template: '<ui-view></ui-view>'
+            })
+            .state('app.auth.login', {
+                url: '/login',
+                templateUrl: 'views/auth/login.html',
+                controller: 'loginController'
+            })
             //Pacientet Pages
             .state('app.pacientet', {
                 url: "/pacientet",
@@ -97,6 +108,14 @@ angular
                     label: 'Shiko Terminet'
                 }
             })
+            .state('app.terminet.shto', {
+                url: '/shtoTerminin',
+                templateUrl: 'views/terminet/shto.html',
+                controller: 'shtoTermininController',
+                ncyBreadcrumb: {
+                    label: 'Shto Terminin'
+                }
+            })
              //Sherbimet Pages
              .state('app.sherbimet', {
                 url: "/sherbimet",
@@ -137,7 +156,7 @@ angular
                 ncyBreadcrumb: {
                     label: 'Shiko Sherbimin'
                 }
-            })
+             })
             .state('app.components.buttons', {
                 url: '/buttons',
                 templateUrl: 'views/components/buttons.html',

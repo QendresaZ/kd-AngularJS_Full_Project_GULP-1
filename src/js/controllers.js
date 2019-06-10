@@ -13,7 +13,11 @@ angular.module('app')
         }).then(function (response) {
             $location.path("pacientet/listoPacientet");
             console.log('Pacienti u regjistrua')
+            $scope.sucessMessage = 'Pacienti u regjistru me sukses';
         }, function (errResponse) {
+
+            $scope.errorMessage = errResponse.data.message;
+            console.log("errorMessage: " + $scope.errorMessage);
             console.log('Gabim gjate regjistrimit: ' + errResponse);
         });
     }
