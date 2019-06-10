@@ -1,6 +1,6 @@
 angular.module('app')
-    .constant('PacientetAPIPacientiServiceURL', 'http://localhost:5555/pacienti-service/v1/pacientet')
-.controller('shikoTerminetController', function ($scope, moment, calendarConfig) {
+    .constant('TerminetAPITerminiServiceURL', 'http://localhost:5555/termini-service/v1/terminet')
+.controller('shikoTerminetController', function ($scope, moment, calendarConfig, $http, TerminetAPITerminiServiceURL) {
     // $scope.calendarView = 'month';
     // $scope.viewDate = new Date();
     // $scope.events = [
@@ -28,18 +28,51 @@ angular.module('app')
     //     }
     // ];
 
+    //
+
+    $http({
+        method: 'GET',
+        url: TerminetAPITerminiServiceURL
+    }).then(function (response) {
+        $scope.terminetData = response.data;
+        console.log("JSON Parse");
+        console.log($scope.terminetData);
+
+        $scope.terminetData.forEach(function (item) {
+            var kohaFillimitSplit = item['kohaFillimit'].split(":");
+
+            var kohaMbarimitSplit = item['kohaMbarimit'].split(":");
+
+            var event = {
+                title: item['shenime'],
+                color: calendarConfig.colorTypes.warning,
+                startsAt: moment().startOf('day').add(kohaFillimitSplit[0], 'hours').add(kohaFillimitSplit[1], 'minutes').toDate(),
+                endsAt: moment().startOf('day').add(kohaMbarimitSplit[0], 'hours').add(kohaMbarimitSplit[1], 'minutes').toDate(),
+                draggable: true,
+                resizable: true
+            };
+            $scope.events.push(event);
+        })
+        // console.log(JSON.parse($scope.terminetData));
+    });
+
+
+
     $scope.events = [
         {
             title: 'An all day event',
             color: calendarConfig.colorTypes.warning,
-            startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-            endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
+            // "21:53:11"
+            startsAt: moment("123", "hmmss").toDate(),
+            endsAt: moment("1234", "hmmss").toDate(),
+            // startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
+            // endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
             allDay: true
         }, {
             title: 'A non all day event',
             color: calendarConfig.colorTypes.important,
             startsAt: moment().startOf('day').add(7, 'hours').toDate(),
-            endsAt: moment().startOf('day').add(19, 'hours').toDate(),
+            endsAt: moment().startOf('day').add(8, 'hours').toDate(),
             draggable: true,
             resizable: true
         }
@@ -47,4 +80,10 @@ angular.module('app')
 
     $scope.calendarView = 'day';
     $scope.viewDate = moment().toDate();
-});
+})
+.controller('shtoTermininController', function ($scope) {
+
+    var self = this;
+
+    $scope.shtoTermininCtrl = self;
+})
