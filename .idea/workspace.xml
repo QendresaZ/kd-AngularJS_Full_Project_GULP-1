@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a67c0cca-2c93-47eb-9db9-3dca6dce13fe" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/css/uiselect-bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/pacientet/terminet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/authControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/authControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/demo/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/demo/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/terminetControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/terminetControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/common/sidebar-nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/common/sidebar-nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pacientet/listo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pacientet/listo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pacientet/perditeso.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pacientet/perditeso.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pacientet/shiko.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pacientet/shiko.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/pacientet/shto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pacientet/shto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/terminet/shto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/terminet/shto.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,15 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/helpers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="4" selection-start-column="4" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="646">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -98,8 +73,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/authControllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="46" column="34" lean-forward="true" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+            <state relative-caret-position="323">
+              <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/pages/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="109" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="109" />
             </state>
           </provider>
         </entry>
@@ -107,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
+            <state relative-caret-position="376">
               <caret line="96" selection-start-line="96" selection-end-line="96" />
             </state>
           </provider>
@@ -173,11 +157,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1910" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -222,6 +205,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="pacientet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngularJS_Full_Project_GULP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngularJS_Full_Project_GULP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularJS_Full_Project_GULP" type="b2602c69:ProjectViewProjectNode" />
@@ -322,15 +312,17 @@
       <workItem from="1560422384188" duration="4455000" />
       <workItem from="1560549946687" duration="4676000" />
       <workItem from="1560594429941" duration="16477000" />
-      <workItem from="1560684140594" duration="2122000" />
+      <workItem from="1560684140594" duration="2984000" />
+      <workItem from="1560725716691" duration="672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106378000" />
+    <option name="totallyTimeSpent" value="107912000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="1913" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.64507604" />
       <window_info id="Structure" order="1" weight="0.24983476" />
@@ -346,7 +338,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.8106822" visible="true" weight="0.3512748" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.8106822" visible="true" weight="0.3512748" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.18931782" side_tool="true" weight="0.33408833" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -417,13 +409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="25" column="90" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/pages/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1324,9 +1309,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
+        <state relative-caret-position="376">
           <caret line="96" selection-start-line="96" selection-end-line="96" />
         </state>
       </provider>
@@ -1338,17 +1330,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/app.js">
+    <entry file="file://$PROJECT_DIR$/src/views/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="238">
+          <caret line="14" column="109" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="109" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/authControllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="46" column="34" lean-forward="true" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+        <state relative-caret-position="323">
+          <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
         </state>
       </provider>
     </entry>

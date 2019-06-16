@@ -8,6 +8,7 @@ angular.module('app')
         $scope.credentials = null;
     };
 
+
     var authenticate = function (credentials, callback) {
         console.log('tried auth');
         // var headers = $scope.credentials ? {
@@ -18,6 +19,7 @@ angular.module('app')
 
         // test
         $http.defaults.headers.common.Authorization = 'Basic a2FydGVsYXBhY2llbnRpdDp0aGlzaXNzZWNyZXQ=';
+        $http.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
             // data: {
         //                grant_type : "password",
         //                 scope : "webclient",
@@ -40,12 +42,18 @@ angular.module('app')
             //         username : "admin",
             //         password : "admin"
             // })
-            data : {
-                grant_type : "password",
-                scope : "webclient",
-                username : "admin",
-                password : "admin"
+            params: {
+                grant_type: "password",
+                scope: "webclient",
+                username : credentials.username,
+                password: credentials.password
             }
+            // data : {
+            //     grant_type : "password",
+            //     scope : "webclient",
+            //     username : "admin",
+            //     password : "admin"
+            // }
         }).then(function (response) {
             if(response.data.access_token) {
                 console.log(response.data.access_token);
