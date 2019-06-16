@@ -7,10 +7,26 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="pacienti">Pacienti :</label>
+<!--                            {{selected.value}}-->
+                            <div class="col-md-9">
+                                <ui-select ng-model="selected.value" id="pacienti" theme="bootstrap" ng-disabled="ctrl.disabled" style="min-width: 300px;" title="Selekto Pacientin">
+                                    <ui-select-match placeholder="Selekto pacientin">{{$select.selected.emri + ' ' + $select.selected.mbiemri}}</ui-select-match>
+                                    <ui-select-choices repeat="pacienti in listaPacienteveArray | filter: $select.search">
+                                        <div ng-bind-html="pacienti.emri + ' ' + pacienti.mbiemri"></div>
+                                        <small>
+                                            <span>Numri Personal: {{pacienti.numriPersonal}}</span>
+                                        </small>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="dataTerminit">Data e Terminit:</label>
                             <div class="col-md-9">
                                 <div class="input-group"
-                                     moment-picker="shtoTermininCtrl.dataTerminit"
+                                     moment-picker="termini.dataTerminit"
                                      format="YYYY-MM-DD"
                                      locale="sq">
                             <span class="input-group-addon">
@@ -19,7 +35,7 @@
 
                                     <input id="dataTerminit" class="form-control"
                                            placeholder="Selekto Daten e Terminit"
-                                           ng-model="shtoTermininCtrl.dataTerminit"
+                                           ng-model="termini.dataTerminit"
                                            ng-model-options="{ updateOn: 'blur' }">
                                 </div>
                             </div>
@@ -28,8 +44,8 @@
                             <label class="col-md-3 col-form-label" for="kohaFillimit">Ora e Fillimit:</label>
                             <div class="col-md-9">
                                 <div class="input-group"
-                                     moment-picker="shtoTermininCtrl.kohaFillimit"
-                                     format="HH:mm"
+                                     moment-picker="termini.kohaFillimit"
+                                     format="H:mm"
                                      locale="sq"
                                      show-header="false">
                                 <span class="input-group-addon">
@@ -37,7 +53,25 @@
                                 </span>
                                     <input id="kohaFillimit" class="form-control"
                                            placeholder="Selekto Koh&euml;n e Fillimit"
-                                           ng-model="shtoTermininCtrl.kohaFillimit"
+                                           ng-model="termini.kohaFillimit"
+                                           ng-model-options="{ updateOn: 'blur' }">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="kohaMbarimit">Ora e Mbarimit:</label>
+                            <div class="col-md-9">
+                                <div class="input-group"
+                                     moment-picker="termini.kohaMbarimit"
+                                     format="H:mm"
+                                     locale="sq"
+                                     show-header="false">
+                                <span class="input-group-addon">
+                                    <i class="octicon octicon-clock"></i>
+                                </span>
+                                    <input id="kohaMbarimit" class="form-control"
+                                           placeholder="Selekto Koh&euml;n e Mbarimit"
+                                           ng-model="termini.kohaMbarimit"
                                            ng-model-options="{ updateOn: 'blur' }">
                                 </div>
                             </div>
@@ -50,7 +84,7 @@
                                             ng-model="termini.shenime" required></textarea>
                             </div>
                         </div>
-                        {{shtoTermininCtrl.dataTerminit}}
+                        {{termini.dataTerminit}}
                         {{shtoTermininCtrl.kohaFillimit}}
 
                         <!--<div class="btn-group">-->
@@ -71,8 +105,8 @@
 
                     </div>
                     <div class="card-footer">
-                      <!--<button type="submit" class="btn btn-sm btn-primary" id="regjistroButton" ng-click="submitPacientiForm()"><i class="fa fa-dot-circle-o"></i> Regjistro</button>-->
-                      <!--<button type="reset" class="btn btn-sm btn-danger" ng-click="resetForm()"><i class="fa fa-ban"></i> Pastro</button>-->
+                      <button type="submit" class="btn btn-sm btn-primary" id="regjistroButton" ng-click="submitTerminiForm()"><i class="fa fa-dot-circle-o"></i> Regjistro</button>
+                      <button type="reset" class="btn btn-sm btn-danger" ng-click="resetForm()"><i class="fa fa-ban"></i> Pastro</button>
                     </div>
                   </div>
                   

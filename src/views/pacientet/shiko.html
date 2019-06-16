@@ -52,9 +52,25 @@
                           </div>
                           <div class="form-group row">
                               <label class="col-md-3 col-form-label" for="ditelindja">Dit&euml;lindja:</label>
+<!--                              <div class="col-md-9">-->
+<!--                                  <input type="date" id="ditelindja" disabled name="diteLindja" class="form-control" placeholder="Dit&euml;lindja e pacientit"-->
+<!--                                         ng-model="pacienti.diteLindja" required>-->
+<!--                              </div>-->
                               <div class="col-md-9">
-                                  <input type="date" id="ditelindja" disabled name="diteLindja" class="form-control" placeholder="Dit&euml;lindja e pacientit"
-                                         ng-model="pacienti.diteLindja" required>
+                                  <div class="input-group"
+                                       moment-picker="pacienti.diteLindja"
+                                       keyboard="true"
+                                       format="YYYY-MM-DD"
+                                       locale="sq">
+                                    <span class="input-group-addon">
+                                        <i class="octicon octicon-calendar"></i>
+                                    </span>
+                                      <input id="ditelindja" class="form-control"
+                                             disabled
+                                             placeholder="YYYY-MM-DD"
+                                             ng-model="pacienti.diteLindja"
+                                             ng-model-options="{ updateOn: 'blur' }">
+                                  </div>
                               </div>
                           </div>
                           <div class="form-group row">
@@ -102,7 +118,28 @@
                   </div>
                   
                 </div>
-                
+                <div class="col-md-6">
+                <div class="card card-accent-info">
+                    <div class="card-header">
+                        <strong>Informacione Shtes&euml; - Pacienti: {{pacienti.emri}} {{pacienti.mbiemri}} | Nr.Personal: {{pacienti.numriPersonal}}</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-header">
+                                Terminet
+                            </div>
+                            <div class="card-body">
+                                <button type="submit" class="btn btn-sm btn-info" id="shikoTerminetButton" ng-click="terminetePacientitPage(pacienti.id)"><i class="fa fa-dot-circle-o"></i> Shiko Terminet</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <!--<button type="submit" class="btn btn-sm btn-primary" id="regjistroButton" ng-click="submitPacientiForm()"><i class="fa fa-dot-circle-o"></i> Regjistro</button>-->
+                        <!--<button type="reset" class="btn btn-sm btn-danger" ng-click="resetForm()"><i class="fa fa-ban"></i> Pastro</button>-->
+                    </div>
+                </div>
+
+            </div>
                 <!--/.col-->
               </div>
 </div>

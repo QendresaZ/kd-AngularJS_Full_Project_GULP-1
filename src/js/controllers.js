@@ -13,7 +13,7 @@ angular.module('app')
         }).then(function (response) {
             $location.path("pacientet/listoPacientet");
             console.log('Pacienti u regjistrua')
-            $scope.sucessMessage = 'Pacienti u regjistru me sukses';
+            $scope.successMessage = 'Pacienti u regjistru me sukses';
         }, function (errResponse) {
 
             $scope.errorMessage = errResponse.data.message;
@@ -140,8 +140,8 @@ angular.module('app')
     $scope.submitPacientiForm = function () {
         console.log("Pacienti JSON: " + JSON.stringify($scope.pacienti));
         $http({
-            method: 'POST',
-            url: PacientetAPIPacientiServiceURL,
+            method: 'PUT',
+            url: PacientetAPIPacientiServiceURL + '/' + $scope.pacientiId,
             data: $scope.pacienti,
         }).then(function (response) {
             $location.path("pacientet/listoPacientet");
@@ -159,7 +159,7 @@ angular.module('app')
 
     $scope.sherbimiId = $stateParams.sherbimiId;
 
-    // populate form's input with pacienti's data
+    // populate form's input with sherbimi's data
     $http({
         method: 'GET',
         url : SherbimetAPISherbimiServiceURL + '/' + $scope.sherbimiId
@@ -212,6 +212,19 @@ angular.module('app')
                 console.log('Gabim gjate perditesimit: ' + errResponse);
             });
         }
+
+        $scope.terminetePacientitPage = function(pacientiId) {
+            $http({
+                method: 'GET',
+                url: PacientetAPIPacientiServiceURL + '/' + pacientiId + '/terminet'
+            }).then(function (response) {
+                console.log(response.data);
+                // $location.path("pacientet/listoPacientet");
+                console.log('TerminetFetched!!!')
+            }, function (errResponse) {
+                console.log('Gabim gjate kerkeses: ' + errResponse);
+            });
+        };
 
         $scope.resetForm = function () {
             $scope.pacienti = null;

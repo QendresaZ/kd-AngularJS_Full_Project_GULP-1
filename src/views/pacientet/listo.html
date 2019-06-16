@@ -6,7 +6,7 @@
                     <i class="fa fa-align-justify"></i> Lista e Pacientëve
                 </div>
                 <div class="card-body">
-                    <div ng-show="{{sucessMessage}}">
+                    <div ng-show="successMessage">
                         {{successMessage}}
                     </div>
                     <label for="statusi-pacienteve">Status i Pacient&euml;ve: </label>
@@ -16,34 +16,34 @@
                     </select>
                     <table class="table table-bordered">
                         <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nr. Personal</th>
-                            <th>Emri</th>
-                            <th>Mbiemri</th>
-                            <th>Gjinia</th>
-                            <th>Numri Telefonit</th>
-                            <th>Dite Lindja</th>
-                            <th>Adresa</th>
-                            <td>Veprimet</td>
-                        </tr>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nr. Personal</th>
+                                <th>Emri</th>
+                                <th>Mbiemri</th>
+                                <th>Gjinia</th>
+                                <th>Numri Telefonit</th>
+                                <th>Dite Lindja</th>
+                                <th>Adresa</th>
+                                <td>Veprimet</td>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="pacienti in pacientet">
-                            <td>{{pacienti.id}}</td>
-                            <td>{{pacienti.numriPersonal}}</td>
-                            <td>{{pacienti.emri}}</td>
-                            <td>{{pacienti.mbiemri}}</td>
-                            <td>{{pacienti.gjinia}}</td>
-                            <td>{{pacienti.numriTelefonit}}</td>
-                            <td>{{pacienti.diteLindja | date: "dd.MM.yyyy"}}</td>
-                            <td>{{pacienti.adresa}}</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-sm" shikoPersonalNumber="{{pacienti.numriPersonal}}" ng-click="shikoPacientin(pacienti.id)"><i class="fa fa-exclamation"></i>&nbsp; Shiko</button>
-                                <button type="button" class="btn btn-success btn-sm" perditesoPersonalNumber="{{pacienti.numriPersonal}}" ng-click="perditesoPacientin(pacienti.id)"><i class="fa fa-pencil"></i>&nbsp; Perditeso</button>
-                                <button type="button" class="btn btn-danger btn-sm" deletePersonalNumber="{{pacienti.numriPersonal}}" ng-click="deletePacientin(pacienti.id)"><i class="fa fa-close"></i>&nbsp; Fshij</button>
-                            </td>
-                        </tr>
+                            <tr ng-repeat="pacienti in pacientet">
+                                <td>{{pacienti.id}}</td>
+                                <td>{{pacienti.numriPersonal}}</td>
+                                <td>{{pacienti.emri}}</td>
+                                <td>{{pacienti.mbiemri}}</td>
+                                <td>{{pacienti.gjinia}}</td>
+                                <td>{{pacienti.numriTelefonit}}</td>
+                                <td>{{pacienti.diteLindja | date: "dd.MM.yyyy"}}</td>
+                                <td>{{pacienti.adresa}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm" shikoPersonalNumber="{{pacienti.numriPersonal}}" ng-click="shikoPacientin(pacienti.id)"><i class="fa fa-exclamation"></i>&nbsp; Shiko</button>
+                                    <button type="button" class="btn btn-success btn-sm" perditesoPersonalNumber="{{pacienti.numriPersonal}}" ng-click="perditesoPacientin(pacienti.id)"><i class="fa fa-pencil"></i>&nbsp; Perditeso</button>
+                                    <button type="button" class="btn btn-danger btn-sm" deletePersonalNumber="{{pacienti.numriPersonal}}" ng-click="deletePacientin(pacienti.id)"><i class="fa fa-close"></i>&nbsp; Fshij</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <ul class="pagination">

@@ -56,9 +56,24 @@
                           </div>
                           <div class="form-group row">
                               <label class="col-md-3 col-form-label" for="ditelindja">Dit&euml;lindja:</label>
+<!--                              <div class="col-md-9">-->
+<!--                                  <input type="date" id="ditelindja" name="diteLindja" class="form-control" placeholder="Dit&euml;lindja e pacientit"-->
+<!--                                         ng-model="pacienti.diteLindja" required>-->
+<!--                              </div>-->
                               <div class="col-md-9">
-                                  <input type="date" id="ditelindja" name="diteLindja" class="form-control" placeholder="Dit&euml;lindja e pacientit"
-                                         ng-model="pacienti.diteLindja" required>
+                                  <div class="input-group"
+                                       moment-picker="pacienti.diteLindja"
+                                       keyboard="true"
+                                       format="YYYY-MM-DD"
+                                       locale="sq">
+                                    <span class="input-group-addon">
+                                        <i class="octicon octicon-calendar"></i>
+                                    </span>
+                                      <input id="ditelindja" class="form-control"
+                                             placeholder="YYYY-MM-DD"
+                                             ng-model="pacienti.diteLindja"
+                                             ng-model-options="{ updateOn: 'blur' }">
+                                  </div>
                               </div>
                           </div>
                           <div class="form-group row">

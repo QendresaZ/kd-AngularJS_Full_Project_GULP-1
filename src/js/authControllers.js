@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('loginController', function ($scope, $location, $http, $rootScope) {
+.controller('loginController', function ($scope, $location, $http, $rootScope, $httpParamSerializer) {
     console.log('LoginController ');
 
     $scope.credentials = {};
@@ -10,14 +10,42 @@ angular.module('app')
 
     var authenticate = function (credentials, callback) {
         console.log('tried auth');
-        var headers = $scope.credentials ? {
-            authorization : 'Basic '
-                            + btoa($scope.credentials.username = ":"
-                                        + $scope.credentials.password)
-        } : {};
+        // var headers = $scope.credentials ? {
+        //     Authorization : 'Basic a2FydGVsYXBhY2llbnRpdDp0aGlzaXNzZWNyZXQ='
+        //                     // + btoa($scope.credentials.username + ":"
+        //                     //             + $scope.credentials.password)
+        // } : {};
 
-        $http.post('http://localhost:8081/auth/oauth/token', {
-           headers : headers
+        // test
+        $http.defaults.headers.common.Authorization = 'Basic a2FydGVsYXBhY2llbnRpdDp0aGlzaXNzZWNyZXQ=';
+            // data: {
+        //                grant_type : "password",
+        //                 scope : "webclient",
+        //                 username : "admin",
+        //                 password : "admin"
+        //             }
+
+        // http://localhost:8081/auth/oauth/token
+
+
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8081/auth/oauth/token',
+            headers: {
+                'Content-Type' : 'application/x-www-form-urlencoded'
+            },
+            // params: $httpParamSerializer({
+            //     grant_type : "password",
+            //         scope : "webclient",
+            //         username : "admin",
+            //         password : "admin"
+            // })
+            data : {
+                grant_type : "password",
+                scope : "webclient",
+                username : "admin",
+                password : "admin"
+            }
         }).then(function (response) {
             if(response.data.access_token) {
                 console.log(response.data.access_token);
@@ -41,7 +69,7 @@ angular.module('app')
                 $location.path('/');
                 $scope.loginerror = false;
             } else {
-                $location.path('/auth/login');
+                $location.path('/login');
                 $scope.loginerror = true;
             }
         });

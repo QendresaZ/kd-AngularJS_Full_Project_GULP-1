@@ -91,6 +91,11 @@ angular
                     label: 'Shiko Pacientin'
                 }
             })
+            .state('app.pacientet.shikoTerminet', {
+                url: '/terminetPacientit',
+                templateUrl: 'views/pacientet/terminet.html',
+                controller: 'KitchenSinkCtrl as vm'
+            })
             // Terminet Pages
             .state('app.terminet', {
                 url: "/terminet",
