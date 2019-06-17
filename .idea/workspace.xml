@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a67c0cca-2c93-47eb-9db9-3dca6dce13fe" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/authControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/authControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pages/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,20 +70,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/authControllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/pages/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="109" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="109" />
+            <state relative-caret-position="323">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -137,7 +137,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/views/auth/login.html" />
         <option value="$PROJECT_DIR$/src/js/routes.js" />
-        <option value="$PROJECT_DIR$/src/views/pages/login.html" />
         <option value="$PROJECT_DIR$/src/views/terminet/shiko.html" />
         <option value="$PROJECT_DIR$/src/css/uiselect-bootstrap4.css" />
         <option value="$PROJECT_DIR$/src/views/pacientet/listo.html" />
@@ -154,6 +153,7 @@
         <option value="$PROJECT_DIR$/src/js/terminetControllers.js" />
         <option value="$PROJECT_DIR$/src/js/app.js" />
         <option value="$PROJECT_DIR$/src/js/authControllers.js" />
+        <option value="$PROJECT_DIR$/src/views/pages/login.html" />
       </list>
     </option>
   </component>
@@ -313,16 +313,15 @@
       <workItem from="1560549946687" duration="4676000" />
       <workItem from="1560594429941" duration="16477000" />
       <workItem from="1560684140594" duration="2984000" />
-      <workItem from="1560725716691" duration="672000" />
+      <workItem from="1560725716691" duration="2195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107912000" />
+    <option name="totallyTimeSpent" value="109435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.64507604" />
       <window_info id="Structure" order="1" weight="0.24983476" />
@@ -1330,17 +1329,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/pages/login.html">
+    <entry file="file://$PROJECT_DIR$/src/js/authControllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="109" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="109" />
+        <state relative-caret-position="255">
+          <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/authControllers.js">
+    <entry file="file://$PROJECT_DIR$/src/views/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
