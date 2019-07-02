@@ -1,0 +1,33 @@
+<div class="animated fadeIn">
+        <div class="row">
+                <div class="col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      <strong>Shto Diagnozën për pacientin {{pacienti.emri}} {{pacienti.mbiemri}}</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert" ng-if="errorMessage">
+                            {{errorMessage}}
+                        </div>
+                      <form action="" method="post" name="regjistroDiagnozenForm" class="form-horizontal">
+                          <div class="form-group row">
+                              <label class="col-md-3 col-form-label" for="shenime">Shenime:</label>
+                              <div class="col-md-9">
+                                  <textarea rows="5" id="shenime" name="shenime" class="form-control"
+                                            placeholder="Sh&euml;nimet rreth Diagnoz&euml;s"
+                                            ng-model="diagnoza.shenime" required></textarea>
+                              </div>
+                          </div>
+                      </form>
+                    </div>
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-sm btn-primary" id="regjistroButton" ng-click="submitDiagnozaForm()"><i class="fa fa-dot-circle-o"></i> Regjistro</button>
+                      <button type="reset" class="btn btn-sm btn-danger" ng-click="resetForm()"><i class="fa fa-ban"></i> Pastro</button>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <!--/.col-->
+              </div>
+</div>

@@ -152,8 +152,10 @@ angular.module('app')
     $scope.kthePacientetMeStatus(true);
 
 })
-.controller('KitchenSinkCtrl', function ($scope, moment, calendarConfig, $http, PacientetAPIPacientiServiceURL) {
+.controller('KitchenSinkCtrl', function ($scope, moment, calendarConfig, $http, PacientetAPIPacientiServiceURL, $stateParams) {
     var vm = this;
+
+    $scope.pacientiId = $stateParams.pacientiId;
 
     moment.locale('sq');
     //These variables MUST be set as a minimum for the calendar to work
@@ -174,7 +176,7 @@ angular.module('app')
 
         $http({
             method: 'GET',
-            url: PacientetAPIPacientiServiceURL + '/' + 86 + '/terminet'
+            url: PacientetAPIPacientiServiceURL + '/' + $scope.pacientId + '/terminet'
         }).then(function (response) {
             $scope.terminet = response.data;
             console.log(response.data);
@@ -202,40 +204,40 @@ angular.module('app')
 
 
     vm.events = [
-        {
-            title: 'An event',
-            color: calendarConfig.colorTypes.warning,
-            startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-            endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
-            draggable: true,
-            resizable: true,
-            actions: actions
-        },{
-            title: 'An event',
-            color: calendarConfig.colorTypes.warning,
-            startsAt: moment().startOf('week').subtract(8, 'days').add(8, 'hours').toDate(),
-            endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
-            draggable: true,
-            resizable: true,
-            actions: actions
-        }, {
-            title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
-            color: calendarConfig.colorTypes.info,
-            startsAt: moment().subtract(1, 'day').toDate(),
-            endsAt: moment().add(5, 'days').toDate(),
-            draggable: true,
-            resizable: true,
-            actions: actions
-        }, {
-            title: 'This is a really long event title that occurs on every year',
-            color: calendarConfig.colorTypes.important,
-            startsAt: moment().startOf('day').add(7, 'hours').toDate(),
-            endsAt: moment().startOf('day').add(19, 'hours').toDate(),
-            recursOn: 'year',
-            draggable: true,
-            resizable: true,
-            actions: actions
-        }
+        // {
+        //     title: 'An event',
+        //     color: calendarConfig.colorTypes.warning,
+        //     startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
+        //     endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
+        //     draggable: true,
+        //     resizable: true,
+        //     actions: actions
+        // },{
+        //     title: 'An event',
+        //     color: calendarConfig.colorTypes.warning,
+        //     startsAt: moment().startOf('week').subtract(8, 'days').add(8, 'hours').toDate(),
+        //     endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
+        //     draggable: true,
+        //     resizable: true,
+        //     actions: actions
+        // }, {
+        //     title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
+        //     color: calendarConfig.colorTypes.info,
+        //     startsAt: moment().subtract(1, 'day').toDate(),
+        //     endsAt: moment().add(5, 'days').toDate(),
+        //     draggable: true,
+        //     resizable: true,
+        //     actions: actions
+        // }, {
+        //     title: 'This is a really long event title that occurs on every year',
+        //     color: calendarConfig.colorTypes.important,
+        //     startsAt: moment().startOf('day').add(7, 'hours').toDate(),
+        //     endsAt: moment().startOf('day').add(19, 'hours').toDate(),
+        //     recursOn: 'year',
+        //     draggable: true,
+        //     resizable: true,
+        //     actions: actions
+        // }
     ];
 
 

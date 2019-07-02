@@ -1,0 +1,31 @@
+<div class="animated fadeIn">
+        <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-danger" ng-show="diagnozat.length == 0" role="alert">
+                        Nuk egziston asnjë diagnozë për pacientin!
+                    </div>
+                  <div class="card card-accent-info" ng-show="diagnozat.length > 0">
+                    <div class="card-header">
+                      <strong>Pacienti: {{pacienti.emri}} {{pacienti.mbiemri}} | Nr.Personal: {{pacienti.numriPersonal}} | <em>Diagnozat</em> </strong>
+                    </div>
+                      <div ng-repeat="diagnoza in diagnozat" class="card-body">
+                          <div class="card">
+                              <div class="card-header">
+                                  Diagnozat
+                                  <span class="badge badge-pill badge-danger float-right">{{diagnoza.data}}</span>
+                              </div>
+                              <div class="card-body">
+                                  <p>{{diagnoza.shenime}}</p>
+                              </div>
+                          </div>
+                      </div>
+                    <div class="card-footer">
+                      <!--<button type="submit" class="btn btn-sm btn-primary" id="regjistroButton" ng-click="submitPacientiForm()"><i class="fa fa-dot-circle-o"></i> Regjistro</button>-->
+                      <!--<button type="reset" class="btn btn-sm btn-danger" ng-click="resetForm()"><i class="fa fa-ban"></i> Pastro</button>-->
+                    </div>
+                  </div>
+                  
+                </div>
+                <!--/.col-->
+              </div>
+</div>

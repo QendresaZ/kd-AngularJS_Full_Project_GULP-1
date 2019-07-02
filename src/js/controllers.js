@@ -214,16 +214,25 @@ angular.module('app')
         }
 
         $scope.terminetePacientitPage = function(pacientiId) {
-            $http({
-                method: 'GET',
-                url: PacientetAPIPacientiServiceURL + '/' + pacientiId + '/terminet'
-            }).then(function (response) {
-                console.log(response.data);
-                // $location.path("pacientet/listoPacientet");
-                console.log('TerminetFetched!!!')
-            }, function (errResponse) {
-                console.log('Gabim gjate kerkeses: ' + errResponse);
-            });
+            $location.path("pacientet/" + pacientiId + "/terminetPacientit");
+            // $http({
+            //     method: 'GET',
+            //     url: PacientetAPIPacientiServiceURL + '/' + pacientiId + '/terminet'
+            // }).then(function (response) {
+            //     console.log(response.data);
+            //     $location.path("pacientet/" + pacientiId + "/terminetPacientit");
+            //     console.log('TerminetFetched!!!')
+            // }, function (errResponse) {
+            //     console.log('Gabim gjate kerkeses: ' + errResponse);
+            // });
+        };
+
+        $scope.diagnozatPacientitPage = function(pacientiId) {
+          $location.path("pacientet/" + pacientiId + "/diagnozat");
+        };
+
+        $scope.shtoDiagnozatPacientitPage = function(pacientiId) {
+            $location.path("pacientet/" + pacientiId + "/diagnozat/shto");
         };
 
         $scope.resetForm = function () {
@@ -255,7 +264,7 @@ angular.module('app')
             }, function (errResponse) {
                 console.log('Gabim gjate perditesimit: ' + errResponse);
             });
-        }
+        };
 
         $scope.resetForm = function () {
             $scope.sherbimi = null;

@@ -92,9 +92,25 @@ angular
                 }
             })
             .state('app.pacientet.shikoTerminet', {
-                url: '/terminetPacientit',
+                url: '/:pacientiId/terminetPacientit',
                 templateUrl: 'views/pacientet/terminet.html',
                 controller: 'KitchenSinkCtrl as vm'
+            })
+            .state('app.pacientet.shikoDiagnozat', {
+                url: '/:pacientiId/diagnozat',
+                templateUrl: 'views/pacientet/diagnozat/shiko.html',
+                controller: 'ShikoDiagnozatPacientitController',
+                ncyBreadcrumb: {
+                    label: 'Diagnozat'
+                }
+            })
+            .state('app.pacientet.shtoDiagnozen', {
+                url: '/:pacientiId/diagnozat/shto',
+                templateUrl: 'views/pacientet/diagnozat/shto.html',
+                controller: 'ShtoDiagnozenPacientitController',
+                ncyBreadcrumb: {
+                    label: 'Shto Diagnozën'
+                }
             })
             // Terminet Pages
             .state('app.terminet', {

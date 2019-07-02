@@ -56,6 +56,9 @@ angular.module('app')
             // }
         }).then(function (response) {
             if(response.data.access_token) {
+                console.log(response.data);
+                $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.access_token;
+                // $cookie.put("access_token", response.data.access_token);
                 console.log(response.data.access_token);
                 $rootScope.authenticated = true;
             } else {
